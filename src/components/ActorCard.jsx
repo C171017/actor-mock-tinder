@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
+import { useTranslation } from '../hooks/useTranslation';
 import './ActorCard.css';
 
 const ActorCard = ({ actor, onSwipe, index }) => {
+  const { t } = useTranslation();
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [rotation, setRotation] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -147,14 +149,14 @@ const ActorCard = ({ actor, onSwipe, index }) => {
       </div>
       <div className="card-content">
         <h2 className="actor-name" title={actor.name}>{actor.name}</h2>
-        <p className="actor-age">{actor.age} 岁</p>
-        <p className="actor-bio">{actor.bio}</p>
+        <p className="actor-age">{actor.age} {t('yearsOld')}</p>
+        <p className="actor-bio">{t(actor.bioKey)}</p>
       </div>
       {position.x > 40 && (
-        <div className="swipe-indicator like-indicator">喜欢</div>
+        <div className="swipe-indicator like-indicator">{t('like')}</div>
       )}
       {position.x < -40 && (
-        <div className="swipe-indicator pass-indicator">不喜欢</div>
+        <div className="swipe-indicator pass-indicator">{t('pass')}</div>
       )}
     </div>
   );

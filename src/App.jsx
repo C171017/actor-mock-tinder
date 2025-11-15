@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import ActorCard from './components/ActorCard';
 import { actors } from './data/actors';
+import LanguageSwitcher from './components/LanguageSwitcher';
+import { useTranslation } from './hooks/useTranslation';
 import './App.css';
 
 function App() {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [likedActors, setLikedActors] = useState([]);
   const [passedActors, setPassedActors] = useState([]);
@@ -44,20 +47,21 @@ function App() {
   return (
     <div className="app">
       <div className="app-header">
-        <h1>演员配对</h1>
+        <h1>{t('header')}</h1>
         <div className="stats">
-          <span className="liked-count">❤️ {likedActors.length}</span>
-          <span className="passed-count">👎 {passedActors.length}</span>
+          <span className="liked-count">{t('liked')} {likedActors.length}</span>
+          <span className="passed-count">{t('passed')} {passedActors.length}</span>
+          <LanguageSwitcher />
         </div>
       </div>
 
       <div className="card-container">
         {isFinished ? (
           <div className="finished-message">
-            <h2>暂时就这些了！</h2>
-            <p>您喜欢了 {likedActors.length} 位演员</p>
+            <h2>{t('finished')}</h2>
+            <p>{t('finishedMessage', { count: likedActors.length })}</p>
             <button className="reset-button" onClick={resetApp}>
-              重新开始
+              {t('reset')}
             </button>
           </div>
         ) : (
