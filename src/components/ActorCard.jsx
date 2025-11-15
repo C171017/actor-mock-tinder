@@ -3,7 +3,7 @@ import { useTranslation } from '../hooks/useTranslation';
 import './ActorCard.css';
 
 const ActorCard = ({ actor, onSwipe, index }) => {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [rotation, setRotation] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -216,7 +216,12 @@ const ActorCard = ({ actor, onSwipe, index }) => {
         )}
       </div>
       <div className="card-content">
-        <h2 className="actor-name" title={actor.name}>{actor.name}</h2>
+        <h2 className="actor-name" title={actor.name}>
+          {actor.name}
+          {lang === 'zh-CN' && actor.chineseNickname && (
+            <span className="chinese-nickname"> · {actor.chineseNickname}</span>
+          )}
+        </h2>
         <p className="actor-age">{actor.age} {t('yearsOld')}</p>
         <p className="actor-bio">{t(actor.bioKey)}</p>
       </div>

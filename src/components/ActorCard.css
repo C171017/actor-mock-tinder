@@ -130,6 +130,13 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
+.chinese-nickname {
+  font-size: 0.85em;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-left: 4px;
+}
+
 .actor-age {
   font-size: 20px;
   margin-bottom: 10px;

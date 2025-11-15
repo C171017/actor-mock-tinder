@@ -12,7 +12,8 @@ export const actors = [
       "/actors/Adam_Driver_physique_3.jpg",
       "/actors/Adam_Driver_physique_4.jpg",
       "/actors/Adam_Driver_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "亚当·德赖弗"
   },
   {
     "id": 2,
@@ -25,7 +26,8 @@ export const actors = [
       "/actors/Ahn_Hyo_Seop_physique_3.jpg",
       "/actors/Ahn_Hyo_Seop_physique_4.jpg",
       "/actors/Ahn_Hyo_Seop_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "安孝燮"
   },
   {
     "id": 3,
@@ -38,7 +40,8 @@ export const actors = [
       "/actors/Austin_Butler_physique_3.jpg",
       "/actors/Austin_Butler_physique_4.jpg",
       "/actors/Austin_Butler_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "奥斯汀·巴特勒"
   },
   {
     "id": 4,
@@ -51,7 +54,8 @@ export const actors = [
       "/actors/Bright_Vachirawit_physique_3.jpg",
       "/actors/Bright_Vachirawit_physique_4.jpg",
       "/actors/Bright_Vachirawit_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "亮仔"
   },
   {
     "id": 5,
@@ -64,7 +68,8 @@ export const actors = [
       "/actors/Cha_Eunwoo_physique_3.jpg",
       "/actors/Cha_Eunwoo_physique_4.jpg",
       "/actors/Cha_Eunwoo_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "车银优"
   },
   {
     "id": 6,
@@ -77,7 +82,8 @@ export const actors = [
       "/actors/Chris_Evans_physique_3.jpg",
       "/actors/Chris_Evans_physique_4.jpg",
       "/actors/Chris_Evans_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "美队"
   },
   {
     "id": 7,
@@ -90,7 +96,8 @@ export const actors = [
       "/actors/Chris_Hemsworth_physique_3.jpg",
       "/actors/Chris_Hemsworth_physique_4.jpg",
       "/actors/Chris_Hemsworth_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "锤哥"
   },
   {
     "id": 8,
@@ -103,7 +110,8 @@ export const actors = [
       "/actors/Dave_Bautista_physique_3.jpg",
       "/actors/Dave_Bautista_physique_4.jpg",
       "/actors/Dave_Bautista_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "巴蒂斯塔"
   },
   {
     "id": 9,
@@ -116,7 +124,8 @@ export const actors = [
       "/actors/Dwayne_Johnson_physique_3.jpg",
       "/actors/Dwayne_Johnson_physique_4.jpg",
       "/actors/Dwayne_Johnson_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "巨石强森"
   },
   {
     "id": 10,
@@ -129,7 +138,8 @@ export const actors = [
       "/actors/Dylan_Wang_physique_3.jpg",
       "/actors/Dylan_Wang_physique_4.jpg",
       "/actors/Dylan_Wang_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "王鹤棣"
   },
   {
     "id": 11,
@@ -142,7 +152,8 @@ export const actors = [
       "/actors/Gong_Jun_physique_3.jpg",
       "/actors/Gong_Jun_physique_4.jpg",
       "/actors/Gong_Jun_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "龚俊"
   },
   {
     "id": 12,
@@ -155,7 +166,8 @@ export const actors = [
       "/actors/Gulf_Kanawut_physique_3.jpg",
       "/actors/Gulf_Kanawut_physique_4.jpg",
       "/actors/Gulf_Kanawut_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "Gulf"
   },
   {
     "id": 13,
@@ -168,7 +180,8 @@ export const actors = [
       "/actors/Henry_Cavill_physique_3.jpg",
       "/actors/Henry_Cavill_physique_4.jpg",
       "/actors/Henry_Cavill_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "大超"
   },
   {
     "id": 14,
@@ -181,7 +194,8 @@ export const actors = [
       "/actors/Hirano_Sho_physique_3.jpg",
       "/actors/Hirano_Sho_physique_4.jpg",
       "/actors/Hirano_Sho_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "平野紫耀"
   },
   {
     "id": 15,
@@ -194,7 +208,8 @@ export const actors = [
       "/actors/Hrithik_Roshan_physique_3.jpg",
       "/actors/Hrithik_Roshan_physique_4.jpg",
       "/actors/Hrithik_Roshan_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "赫里尼克"
   },
   {
     "id": 16,
@@ -207,7 +222,8 @@ export const actors = [
       "/actors/Hugh_Jackman_physique_3.jpg",
       "/actors/Hugh_Jackman_physique_4.jpg",
       "/actors/Hugh_Jackman_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "狼叔"
   },
   {
     "id": 17,
@@ -220,7 +236,8 @@ export const actors = [
       "/actors/Hwang_In_Yeop_physique_3.jpg",
       "/actors/Hwang_In_Yeop_physique_4.jpg",
       "/actors/Hwang_In_Yeop_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "黄寅烨"
   },
   {
     "id": 18,
@@ -233,7 +250,8 @@ export const actors = [
       "/actors/Jacob_Elordi_physique_3.jpg",
       "/actors/Jacob_Elordi_physique_4.jpg",
       "/actors/Jacob_Elordi_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "雅各布"
   },
   {
     "id": 19,
@@ -246,7 +264,8 @@ export const actors = [
       "/actors/Jamie_Dornan_physique_3.jpg",
       "/actors/Jamie_Dornan_physique_4.jpg",
       "/actors/Jamie_Dornan_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "詹米·多南"
   },
   {
     "id": 20,
@@ -259,7 +278,8 @@ export const actors = [
       "/actors/Jason_Momoa_physique_3.jpg",
       "/actors/Jason_Momoa_physique_4.jpg",
       "/actors/Jason_Momoa_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "海王"
   },
   {
     "id": 21,
@@ -272,7 +292,8 @@ export const actors = [
       "/actors/Ji_Chang_Wook_physique_3.jpg",
       "/actors/Ji_Chang_Wook_physique_4.jpg",
       "/actors/Ji_Chang_Wook_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "池昌旭"
   },
   {
     "id": 22,
@@ -285,7 +306,8 @@ export const actors = [
       "/actors/Jungkook_BTS_physique_3.jpg",
       "/actors/Jungkook_BTS_physique_4.jpg",
       "/actors/Jungkook_BTS_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "田柾国"
   },
   {
     "id": 23,
@@ -298,7 +320,8 @@ export const actors = [
       "/actors/Kai_EXO_physique_3.jpg",
       "/actors/Kai_EXO_physique_4.jpg",
       "/actors/Kai_EXO_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "金钟仁"
   },
   {
     "id": 24,
@@ -311,7 +334,8 @@ export const actors = [
       "/actors/Keanu_Reeves_physique_3.jpg",
       "/actors/Keanu_Reeves_physique_4.jpg",
       "/actors/Keanu_Reeves_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "基努"
   },
   {
     "id": 25,
@@ -324,7 +348,8 @@ export const actors = [
       "/actors/Kentaro_Sakaguchi_physique_3.jpg",
       "/actors/Kentaro_Sakaguchi_physique_4.jpg",
       "/actors/Kentaro_Sakaguchi_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "坂口健太郎"
   },
   {
     "id": 26,
@@ -337,7 +362,8 @@ export const actors = [
       "/actors/Kento_Yamazaki_physique_3.jpg",
       "/actors/Kento_Yamazaki_physique_4.jpg",
       "/actors/Kento_Yamazaki_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "山崎贤人"
   },
   {
     "id": 27,
@@ -350,7 +376,8 @@ export const actors = [
       "/actors/Kim_Woo_Bin_physique_3.jpg",
       "/actors/Kim_Woo_Bin_physique_4.jpg",
       "/actors/Kim_Woo_Bin_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "金宇彬"
   },
   {
     "id": 28,
@@ -363,7 +390,8 @@ export const actors = [
       "/actors/Lee_Dong_Wook_physique_3.jpg",
       "/actors/Lee_Dong_Wook_physique_4.jpg",
       "/actors/Lee_Dong_Wook_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "李栋旭"
   },
   {
     "id": 29,
@@ -376,7 +404,8 @@ export const actors = [
       "/actors/Lee_Min_Ho_physique_3.jpg",
       "/actors/Lee_Min_Ho_physique_4.jpg",
       "/actors/Lee_Min_Ho_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "李敏镐"
   },
   {
     "id": 30,
@@ -389,7 +418,8 @@ export const actors = [
       "/actors/Leo_Wu_physique_3.jpg",
       "/actors/Leo_Wu_physique_4.jpg",
       "/actors/Leo_Wu_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "吴磊"
   },
   {
     "id": 31,
@@ -402,7 +432,8 @@ export const actors = [
       "/actors/Mackenyu_physique_3.jpg",
       "/actors/Mackenyu_physique_4.jpg",
       "/actors/Mackenyu_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "真剑佑"
   },
   {
     "id": 32,
@@ -415,7 +446,8 @@ export const actors = [
       "/actors/Michael_B._Jordan_physique_3.jpg",
       "/actors/Michael_B._Jordan_physique_4.jpg",
       "/actors/Michael_B._Jordan_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "迈克尔·B·乔丹"
   },
   {
     "id": 33,
@@ -428,7 +460,8 @@ export const actors = [
       "/actors/Mile_Phakphum_physique_3.jpg",
       "/actors/Mile_Phakphum_physique_4.jpg",
       "/actors/Mile_Phakphum_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "Mile"
   },
   {
     "id": 34,
@@ -441,7 +474,8 @@ export const actors = [
       "/actors/Nadech_Kugimiya_physique_3.jpg",
       "/actors/Nadech_Kugimiya_physique_4.jpg",
       "/actors/Nadech_Kugimiya_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "纳得克"
   },
   {
     "id": 35,
@@ -454,7 +488,8 @@ export const actors = [
       "/actors/Nam_Joo_Hyuk_physique_3.jpg",
       "/actors/Nam_Joo_Hyuk_physique_4.jpg",
       "/actors/Nam_Joo_Hyuk_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "南柱赫"
   },
   {
     "id": 36,
@@ -467,7 +502,8 @@ export const actors = [
       "/actors/Park_Seo_Joon_physique_3.jpg",
       "/actors/Park_Seo_Joon_physique_4.jpg",
       "/actors/Park_Seo_Joon_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "朴叙俊"
   },
   {
     "id": 37,
@@ -480,7 +516,8 @@ export const actors = [
       "/actors/Regé-Jean_Page_physique_3.jpg",
       "/actors/Regé-Jean_Page_physique_4.jpg",
       "/actors/Regé-Jean_Page_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "雷吉-让·佩吉"
   },
   {
     "id": 38,
@@ -493,7 +530,8 @@ export const actors = [
       "/actors/Ren_Jialun_physique_3.jpg",
       "/actors/Ren_Jialun_physique_4.jpg",
       "/actors/Ren_Jialun_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "任嘉伦"
   },
   {
     "id": 39,
@@ -506,7 +544,8 @@ export const actors = [
       "/actors/Ryan_Gosling_physique_3.jpg",
       "/actors/Ryan_Gosling_physique_4.jpg",
       "/actors/Ryan_Gosling_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "高司令"
   },
   {
     "id": 40,
@@ -519,7 +558,8 @@ export const actors = [
       "/actors/Sebastian_Stan_physique_3.jpg",
       "/actors/Sebastian_Stan_physique_4.jpg",
       "/actors/Sebastian_Stan_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "384"
   },
   {
     "id": 41,
@@ -532,7 +572,8 @@ export const actors = [
       "/actors/Sidharth_Malhotra_physique_3.jpg",
       "/actors/Sidharth_Malhotra_physique_4.jpg",
       "/actors/Sidharth_Malhotra_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "希德哈思"
   },
   {
     "id": 42,
@@ -545,7 +586,8 @@ export const actors = [
       "/actors/Song_Kang_physique_3.jpg",
       "/actors/Song_Kang_physique_4.jpg",
       "/actors/Song_Kang_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "宋江"
   },
   {
     "id": 43,
@@ -558,7 +600,8 @@ export const actors = [
       "/actors/Song_Weilong_physique_3.jpg",
       "/actors/Song_Weilong_physique_4.jpg",
       "/actors/Song_Weilong_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "宋威龙"
   },
   {
     "id": 44,
@@ -571,7 +614,8 @@ export const actors = [
       "/actors/Taemin_SHINee_physique_3.jpg",
       "/actors/Taemin_SHINee_physique_4.jpg",
       "/actors/Taemin_SHINee_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "李泰民"
   },
   {
     "id": 45,
@@ -584,7 +628,8 @@ export const actors = [
       "/actors/Taeyang_BIGBANG_physique_3.jpg",
       "/actors/Taeyang_BIGBANG_physique_4.jpg",
       "/actors/Taeyang_BIGBANG_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "太阳"
   },
   {
     "id": 46,
@@ -597,7 +642,8 @@ export const actors = [
       "/actors/Takeru_Satoh_physique_3.jpg",
       "/actors/Takeru_Satoh_physique_4.jpg",
       "/actors/Takeru_Satoh_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "佐藤健"
   },
   {
     "id": 47,
@@ -610,7 +656,8 @@ export const actors = [
       "/actors/Takumi_Kitamura_physique_3.jpg",
       "/actors/Takumi_Kitamura_physique_4.jpg",
       "/actors/Takumi_Kitamura_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "北村匠海"
   },
   {
     "id": 48,
@@ -623,7 +670,8 @@ export const actors = [
       "/actors/Tiger_Shroff_physique_3.jpg",
       "/actors/Tiger_Shroff_physique_4.jpg",
       "/actors/Tiger_Shroff_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "泰格"
   },
   {
     "id": 49,
@@ -636,7 +684,8 @@ export const actors = [
       "/actors/Varun_Dhawan_physique_3.jpg",
       "/actors/Varun_Dhawan_physique_4.jpg",
       "/actors/Varun_Dhawan_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "瓦伦"
   },
   {
     "id": 50,
@@ -649,7 +698,8 @@ export const actors = [
       "/actors/Vidyut_Jamwal_physique_3.jpg",
       "/actors/Vidyut_Jamwal_physique_4.jpg",
       "/actors/Vidyut_Jamwal_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "维德尤特"
   },
   {
     "id": 51,
@@ -662,7 +712,8 @@ export const actors = [
       "/actors/Wang_Yibo_physique_3.jpg",
       "/actors/Wang_Yibo_physique_4.jpg",
       "/actors/Wang_Yibo_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "王一博"
   },
   {
     "id": 52,
@@ -675,7 +726,8 @@ export const actors = [
       "/actors/Win_Metawin_physique_3.jpg",
       "/actors/Win_Metawin_physique_4.jpg",
       "/actors/Win_Metawin_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "Win"
   },
   {
     "id": 53,
@@ -688,7 +740,8 @@ export const actors = [
       "/actors/Wonho_physique_3.jpg",
       "/actors/Wonho_physique_4.jpg",
       "/actors/Wonho_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "元虎"
   },
   {
     "id": 54,
@@ -701,7 +754,8 @@ export const actors = [
       "/actors/Xiao_Zhan_physique_3.jpg",
       "/actors/Xiao_Zhan_physique_4.jpg",
       "/actors/Xiao_Zhan_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "肖战"
   },
   {
     "id": 55,
@@ -714,7 +768,8 @@ export const actors = [
       "/actors/Yang_Yang_physique_3.jpg",
       "/actors/Yang_Yang_physique_4.jpg",
       "/actors/Yang_Yang_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "杨洋"
   },
   {
     "id": 56,
@@ -727,7 +782,8 @@ export const actors = [
       "/actors/Yoshizawa_Ryo_physique_3.jpg",
       "/actors/Yoshizawa_Ryo_physique_4.jpg",
       "/actors/Yoshizawa_Ryo_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "吉泽亮"
   },
   {
     "id": 57,
@@ -740,7 +796,8 @@ export const actors = [
       "/actors/Yugyeom_GOT7_physique_3.jpg",
       "/actors/Yugyeom_GOT7_physique_4.jpg",
       "/actors/Yugyeom_GOT7_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "金有谦"
   },
   {
     "id": 58,
@@ -753,6 +810,7 @@ export const actors = [
       "/actors/Zac_Efron_physique_3.jpg",
       "/actors/Zac_Efron_physique_4.jpg",
       "/actors/Zac_Efron_physique_5.jpg"
-    ]
+    ],
+    "chineseNickname": "扎克·埃夫隆"
   }
 ];
