@@ -7,28 +7,43 @@ const ActorCard = ({ actor, onSwipe, index }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [rotation, setRotation] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isImageSwiping, setIsImageSwiping] = useState(false);
   const startPosRef = useRef({ x: 0, y: 0 });
+  const currentPosRef = useRef({ x: 0, y: 0 });
   const isDraggingRef = useRef(false);
   const cardRef = useRef(null);
+
+  const images = actor.images || [actor.image].filter(Boolean);
 
   useEffect(() => {
     setPosition({ x: 0, y: 0 });
     setRotation(0);
     setIsDragging(false);
+    setCurrentImageIndex(0);
+    setIsImageSwiping(false);
     isDraggingRef.current = false;
   }, [actor.id]);
 
-  const handleStart = (clientX, clientY) => {
+  const handleStart = (clientX, clientY, isImageArea = false) => {
     startPosRef.current = { x: clientX, y: clientY };
+    currentPosRef.current = { x: clientX, y: clientY };
     isDraggingRef.current = true;
     setIsDragging(true);
+    setIsImageSwiping(isImageArea && images.length > 1);
   };
 
   const handleMove = (clientX, clientY) => {
     if (!isDraggingRef.current) return;
 
+    currentPosRef.current = { x: clientX, y: clientY };
     const deltaX = clientX - startPosRef.current.x;
     const deltaY = clientY - startPosRef.current.y;
+
+    // If swiping images, don't move the card
+    if (isImageSwiping) {
+      return;
+    }
 
     setPosition({ x: deltaX, y: deltaY });
     setRotation(deltaX * 0.1);
@@ -36,29 +51,56 @@ const ActorCard = ({ actor, onSwipe, index }) => {
 
   const handleEnd = () => {
     if (!isDraggingRef.current) return;
+    
+    if (isImageSwiping) {
+      // Handle image swiping
+      const deltaX = currentPosRef.current.x - startPosRef.current.x;
+      const threshold = 50;
+      
+      if (Math.abs(deltaX) > threshold) {
+        if (deltaX < 0 && currentImageIndex < images.length - 1) {
+          // Swipe left - next image (like Tinder)
+          setCurrentImageIndex(currentImageIndex + 1);
+        } else if (deltaX > 0 && currentImageIndex > 0) {
+          // Swipe right - previous image
+          setCurrentImageIndex(currentImageIndex - 1);
+        }
+      }
+      
+      setIsImageSwiping(false);
+    } else {
+      // Handle card swiping
+      const threshold = 80;
+      if (Math.abs(position.x) > threshold) {
+        const direction = position.x > 0 ? 'right' : 'left';
+        // Animate card off screen
+        const exitX = position.x > 0 ? window.innerWidth : -window.innerWidth;
+        setPosition({ x: exitX, y: position.y });
+        setRotation(position.x > 0 ? 30 : -30);
+        setTimeout(() => {
+          onSwipe(direction);
+        }, 200);
+      } else {
+        // Snap back with spring animation
+        setPosition({ x: 0, y: 0 });
+        setRotation(0);
+      }
+    }
+    
     isDraggingRef.current = false;
     setIsDragging(false);
-
-    const threshold = 80;
-    if (Math.abs(position.x) > threshold) {
-      const direction = position.x > 0 ? 'right' : 'left';
-      // Animate card off screen
-      const exitX = position.x > 0 ? window.innerWidth : -window.innerWidth;
-      setPosition({ x: exitX, y: position.y });
-      setRotation(position.x > 0 ? 30 : -30);
-      setTimeout(() => {
-        onSwipe(direction);
-      }, 200);
-    } else {
-      // Snap back with spring animation
-      setPosition({ x: 0, y: 0 });
-      setRotation(0);
-    }
   };
 
   const handleMouseDown = (e) => {
     e.preventDefault();
-    handleStart(e.clientX, e.clientY);
+    const isImageArea = e.target.tagName === 'IMG' || e.target.closest('.card-image');
+    handleStart(e.clientX, e.clientY, isImageArea);
+  };
+
+  const handleImageMouseDown = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    handleStart(e.clientX, e.clientY, true);
   };
 
   const handleMouseMove = (e) => {
@@ -73,7 +115,14 @@ const ActorCard = ({ actor, onSwipe, index }) => {
 
   const handleTouchStart = (e) => {
     const touch = e.touches[0];
-    handleStart(touch.clientX, touch.clientY);
+    const isImageArea = e.target.tagName === 'IMG' || e.target.closest('.card-image');
+    handleStart(touch.clientX, touch.clientY, isImageArea);
+  };
+
+  const handleImageTouchStart = (e) => {
+    e.stopPropagation();
+    const touch = e.touches[0];
+    handleStart(touch.clientX, touch.clientY, true);
   };
 
   const handleTouchMove = (e) => {
@@ -144,8 +193,27 @@ const ActorCard = ({ actor, onSwipe, index }) => {
       onTouchStart={handleTouchStart}
     >
       <div className="card-image">
-        <img src={actor.image} alt={actor.name} />
+        <img 
+          src={images[currentImageIndex]} 
+          alt={actor.name}
+          onMouseDown={handleImageMouseDown}
+          onTouchStart={handleImageTouchStart}
+        />
         <div className="card-overlay"></div>
+        {images.length > 1 && (
+          <div className="image-indicators">
+            {images.map((_, idx) => (
+              <div
+                key={idx}
+                className={`image-dot ${idx === currentImageIndex ? 'active' : ''}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentImageIndex(idx);
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <div className="card-content">
         <h2 className="actor-name" title={actor.name}>{actor.name}</h2>
