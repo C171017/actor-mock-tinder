@@ -46,15 +46,20 @@ const ActorCard = ({ actor, onSwipe, index }) => {
     }
 
     setPosition({ x: deltaX, y: deltaY });
-    setRotation(deltaX * 0.1);
+    // Smoother rotation with resistance
+    const rotationAmount = Math.min(Math.max(deltaX * 0.08, -15), 15);
+    setRotation(rotationAmount);
   };
 
   const handleEnd = () => {
     if (!isDraggingRef.current) return;
     
+    // Calculate actual delta from refs (more reliable than state)
+    const deltaX = currentPosRef.current.x - startPosRef.current.x;
+    const deltaY = currentPosRef.current.y - startPosRef.current.y;
+    
     if (isImageSwiping) {
       // Handle image swiping
-      const deltaX = currentPosRef.current.x - startPosRef.current.x;
       const threshold = 50;
       
       if (Math.abs(deltaX) > threshold) {
@@ -71,17 +76,18 @@ const ActorCard = ({ actor, onSwipe, index }) => {
     } else {
       // Handle card swiping
       const threshold = 80;
-      if (Math.abs(position.x) > threshold) {
-        const direction = position.x > 0 ? 'right' : 'left';
-        // Animate card off screen
-        const exitX = position.x > 0 ? window.innerWidth : -window.innerWidth;
-        setPosition({ x: exitX, y: position.y });
-        setRotation(position.x > 0 ? 30 : -30);
+      if (Math.abs(deltaX) > threshold) {
+        const direction = deltaX > 0 ? 'right' : 'left';
+        // Animate card off screen smoothly
+        const exitX = deltaX > 0 ? window.innerWidth + 100 : -window.innerWidth - 100;
+        const exitY = deltaY * 0.5; // Add some vertical movement for natural feel
+        setPosition({ x: exitX, y: exitY });
+        setRotation(deltaX > 0 ? 25 : -25);
         setTimeout(() => {
           onSwipe(direction);
-        }, 200);
+        }, 250);
       } else {
-        // Snap back with spring animation
+        // Snap back with smooth spring animation
         setPosition({ x: 0, y: 0 });
         setRotation(0);
       }
@@ -127,6 +133,7 @@ const ActorCard = ({ actor, onSwipe, index }) => {
 
   const handleTouchMove = (e) => {
     if (isDraggingRef.current) {
+      e.preventDefault(); // Prevent scrolling while dragging
       const touch = e.touches[0];
       handleMove(touch.clientX, touch.clientY);
     }
@@ -149,6 +156,7 @@ const ActorCard = ({ actor, onSwipe, index }) => {
 
     const handleTouchMoveWrapper = (e) => {
       if (isDraggingRef.current) {
+        e.preventDefault(); // Prevent scrolling while dragging
         const touch = e.touches[0];
         handleMove(touch.clientX, touch.clientY);
       }
@@ -161,7 +169,7 @@ const ActorCard = ({ actor, onSwipe, index }) => {
     if (isDragging) {
       document.addEventListener('mousemove', handleMouseMoveWrapper);
       document.addEventListener('mouseup', handleMouseUpWrapper);
-      document.addEventListener('touchmove', handleTouchMoveWrapper);
+      document.addEventListener('touchmove', handleTouchMoveWrapper, { passive: false });
       document.addEventListener('touchend', handleTouchEndWrapper);
 
       return () => {
@@ -184,10 +192,10 @@ const ActorCard = ({ actor, onSwipe, index }) => {
       ref={cardRef}
       className={`actor-card ${getSwipeClass()}`}
       style={{
-        transform: `translate(${position.x}px, ${position.y}px) rotate(${rotation}deg) scale(${1 - index * 0.04})`,
+        transform: `translate3d(${position.x}px, ${position.y}px, 0) rotate(${rotation}deg) scale(${1 - index * 0.04})`,
         zIndex: 10 - index,
         opacity: index === 0 ? 1 : 0.85 - index * 0.08,
-        transition: isDragging ? 'none' : 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease',
+        transition: isDragging ? 'none' : 'transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
       }}
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
@@ -216,12 +224,14 @@ const ActorCard = ({ actor, onSwipe, index }) => {
         )}
       </div>
       <div className="card-content">
-        <h2 className="actor-name" title={actor.name}>
-          {actor.name}
+        <div className="actor-name-container">
+          <h2 className="actor-name" title={actor.name}>
+            {actor.name}
+          </h2>
           {lang === 'zh-CN' && actor.chineseNickname && (
-            <span className="chinese-nickname"> · {actor.chineseNickname}</span>
+            <p className="chinese-nickname">{actor.chineseNickname}</p>
           )}
-        </h2>
+        </div>
         <p className="actor-age">{actor.age} {t('yearsOld')}</p>
         <p className="actor-bio">{t(actor.bioKey)}</p>
       </div>

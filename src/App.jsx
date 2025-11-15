@@ -5,16 +5,27 @@ import LanguageSwitcher from './components/LanguageSwitcher';
 import { useTranslation } from './hooks/useTranslation';
 import './App.css';
 
+// Fisher-Yates shuffle algorithm
+const shuffleArray = (array) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 function App() {
   const { t } = useTranslation();
+  const [shuffledActors, setShuffledActors] = useState(() => shuffleArray(actors));
   const [currentIndex, setCurrentIndex] = useState(0);
   const [likedActors, setLikedActors] = useState([]);
   const [passedActors, setPassedActors] = useState([]);
 
   const handleSwipe = (direction) => {
-    if (currentIndex >= actors.length) return;
+    if (currentIndex >= shuffledActors.length) return;
 
-    const currentActor = actors[currentIndex];
+    const currentActor = shuffledActors[currentIndex];
     
     if (direction === 'right') {
       setLikedActors([...likedActors, currentActor]);
@@ -36,13 +47,14 @@ function App() {
   };
 
   const resetApp = () => {
+    setShuffledActors(shuffleArray(actors));
     setCurrentIndex(0);
     setLikedActors([]);
     setPassedActors([]);
   };
 
-  const visibleCards = actors.slice(currentIndex, currentIndex + 3);
-  const isFinished = currentIndex >= actors.length;
+  const visibleCards = shuffledActors.slice(currentIndex, currentIndex + 3);
+  const isFinished = currentIndex >= shuffledActors.length;
 
   return (
     <div className="app">
