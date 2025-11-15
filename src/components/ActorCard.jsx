@@ -37,12 +37,18 @@ const ActorCard = ({ actor, onSwipe, index }) => {
     isDraggingRef.current = false;
     setIsDragging(false);
 
-    const threshold = 100;
+    const threshold = 80;
     if (Math.abs(position.x) > threshold) {
       const direction = position.x > 0 ? 'right' : 'left';
-      onSwipe(direction);
+      // Animate card off screen
+      const exitX = position.x > 0 ? window.innerWidth : -window.innerWidth;
+      setPosition({ x: exitX, y: position.y });
+      setRotation(position.x > 0 ? 30 : -30);
+      setTimeout(() => {
+        onSwipe(direction);
+      }, 200);
     } else {
-      // Snap back
+      // Snap back with spring animation
       setPosition({ x: 0, y: 0 });
       setRotation(0);
     }
@@ -127,9 +133,10 @@ const ActorCard = ({ actor, onSwipe, index }) => {
       ref={cardRef}
       className={`actor-card ${getSwipeClass()}`}
       style={{
-        transform: `translate(${position.x}px, ${position.y}px) rotate(${rotation}deg) scale(${1 - index * 0.05})`,
+        transform: `translate(${position.x}px, ${position.y}px) rotate(${rotation}deg) scale(${1 - index * 0.04})`,
         zIndex: 10 - index,
-        opacity: index === 0 ? 1 : 0.9 - index * 0.1,
+        opacity: index === 0 ? 1 : 0.85 - index * 0.08,
+        transition: isDragging ? 'none' : 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease',
       }}
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
@@ -139,15 +146,15 @@ const ActorCard = ({ actor, onSwipe, index }) => {
         <div className="card-overlay"></div>
       </div>
       <div className="card-content">
-        <h2 className="actor-name">{actor.name}</h2>
-        <p className="actor-age">{actor.age} years old</p>
+        <h2 className="actor-name" title={actor.name}>{actor.name}</h2>
+        <p className="actor-age">{actor.age} 岁</p>
         <p className="actor-bio">{actor.bio}</p>
       </div>
-      {position.x > 50 && (
-        <div className="swipe-indicator like-indicator">LIKE</div>
+      {position.x > 40 && (
+        <div className="swipe-indicator like-indicator">喜欢</div>
       )}
-      {position.x < -50 && (
-        <div className="swipe-indicator pass-indicator">PASS</div>
+      {position.x < -40 && (
+        <div className="swipe-indicator pass-indicator">不喜欢</div>
       )}
     </div>
   );

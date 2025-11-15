@@ -21,7 +21,7 @@ function App() {
 
     setTimeout(() => {
       setCurrentIndex(currentIndex + 1);
-    }, 300);
+    }, 250);
   };
 
   const handleLike = () => {
@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="app">
       <div className="app-header">
-        <h1>Actor Tinder</h1>
+        <h1>演员配对</h1>
         <div className="stats">
           <span className="liked-count">❤️ {likedActors.length}</span>
           <span className="passed-count">👎 {passedActors.length}</span>
@@ -54,10 +54,10 @@ function App() {
       <div className="card-container">
         {isFinished ? (
           <div className="finished-message">
-            <h2>That's all for now!</h2>
-            <p>You liked {likedActors.length} actor(s)</p>
+            <h2>暂时就这些了！</h2>
+            <p>您喜欢了 {likedActors.length} 位演员</p>
             <button className="reset-button" onClick={resetApp}>
-              Start Over
+              重新开始
             </button>
           </div>
         ) : (
