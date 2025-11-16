@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ActorCard from './components/ActorCard';
 import { actors } from './data/actors';
-import LanguageSwitcher from './components/LanguageSwitcher';
+import ControlBar from './components/ControlBar';
 import { useTranslation } from './hooks/useTranslation';
 import './App.css';
 
@@ -58,15 +58,6 @@ function App() {
 
   return (
     <div className="app">
-      <div className="app-header">
-        <h1>{t('header')}</h1>
-        <div className="stats">
-          <span className="liked-count">{t('liked')} {likedActors.length}</span>
-          <span className="passed-count">{t('passed')} {passedActors.length}</span>
-          <LanguageSwitcher />
-        </div>
-      </div>
-
       <div className="card-container">
         {isFinished ? (
           <div className="finished-message">
@@ -89,6 +80,11 @@ function App() {
           </>
         )}
       </div>
+
+      <ControlBar 
+        likedCount={likedActors.length}
+        passedCount={passedActors.length}
+      />
 
     </div>
   );

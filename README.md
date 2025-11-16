@@ -90,7 +90,6 @@ npm run preview
 
 1. **Swipe Cards**: 
    - Drag cards left to pass or right to like
-   - Use the ❤️ (like) or ✕ (pass) buttons at the bottom
    - Cards show visual indicators when swiping
 
 2. **Browse Images**:
