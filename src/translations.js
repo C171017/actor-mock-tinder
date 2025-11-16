@@ -12,8 +12,8 @@ export const translations = {
     
     // Buttons
     reset: '重新开始',
-    like: '喜欢',
-    pass: '不喜欢',
+    like: '❤️‍🔥',
+    pass: '🙅🏼',
     
     // Card
     yearsOld: '岁',
@@ -40,8 +40,8 @@ export const translations = {
     
     // Buttons
     reset: '重新開始',
-    like: '喜歡',
-    pass: '不喜歡',
+    like: '❤️‍🔥',
+    pass: '🙅🏼',
     
     // Card
     yearsOld: '歲',
@@ -68,8 +68,8 @@ export const translations = {
     
     // Buttons
     reset: 'Start Over',
-    like: 'LIKE',
-    pass: 'NOPE',
+    like: '❤️‍🔥',
+    pass: '🙅🏼',
     
     // Card
     yearsOld: 'years old',

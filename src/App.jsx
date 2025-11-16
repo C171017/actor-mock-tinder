@@ -90,16 +90,6 @@ function App() {
         )}
       </div>
 
-      {!isFinished && (
-        <div className="action-buttons">
-          <button className="pass-button" onClick={handlePass}>
-            <span className="button-icon">✕</span>
-          </button>
-          <button className="like-button" onClick={handleLike}>
-            <span className="button-icon">♥</span>
-          </button>
-        </div>
-      )}
     </div>
   );
 }

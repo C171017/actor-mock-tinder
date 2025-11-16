@@ -4,32 +4,23 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100svh;
+  /* background: #7FFFD4; */
+}
+
 body {
+  height: 100svh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #FD5068 0%, #FF6B9D 25%, #FF8E8E 50%, #FFB3B3 75%, #FFC8C8 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  min-height: 100vh;
-  overflow-x: hidden;
+  background: #f6bfd2;
   position: relative;
+  /* overflow: hidden; */
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
 
 @keyframes gradientShift {
   0%, 100% {
@@ -42,7 +33,8 @@ body::before {
 
 #root {
   width: 100%;
-  min-height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
   position: relative;
   z-index: 1;
 }
