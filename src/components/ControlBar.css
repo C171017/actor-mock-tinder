@@ -3,40 +3,55 @@
   max-width: 400px;
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  padding: 18px 24px;
+  margin-top: auto;
+  margin-bottom: 16px;
+  padding: 12px 18px;
   color: white;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px) saturate(180%);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 10;
+  flex-shrink: 0;
 }
 
 .control-bar-stats {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   font-size: 16px;
   font-weight: 600;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .liked-count,
 .passed-count {
-  padding: 8px 16px;
+  padding: 6px 14px;
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 25px;
+  border-radius: 12px;
   backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1),
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1),
               inset 0 1px 0 rgba(255, 255, 255, 0.5);
   transition: all 0.3s ease;
   font-weight: 700;
+  font-size: 16px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Make emojis bigger */
+.liked-count .emoji,
+.passed-count .emoji {
+  font-size: 1.5em;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .liked-count:hover,
@@ -49,19 +64,23 @@
 
 .language-switcher {
   position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .language-select {
-  padding: 6px 12px;
+  padding: 6px 14px;
   background: rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 20px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
   color: white;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   backdrop-filter: blur(20px) saturate(180%);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1),
               inset 0 1px 0 rgba(255, 255, 255, 0.5);
   transition: all 0.3s ease;
   outline: none;
@@ -69,7 +88,9 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='white' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
-  padding-right: 35px;
+  padding-right: 32px;
+  width: 100%;
+  text-align: center;
 }
 
 .language-select:hover {
@@ -92,24 +113,24 @@
 /* Responsive design */
 @media (max-width: 480px) {
   .control-bar {
-    padding: 10px 10px;
-    margin-bottom: 5px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
   }
 
   .control-bar-stats {
     font-size: 14px;
-    gap: 8px;
+    gap: 6px;
   }
 
   .liked-count,
   .passed-count {
-    padding: 5px 10px;
+    padding: 5px 12px;
     font-size: 14px;
   }
 
   .language-select {
-    font-size: 12px;
-    padding: 5px 30px 5px 10px;
+    font-size: 13px;
+    padding: 5px 28px 5px 10px;
   }
 }
 

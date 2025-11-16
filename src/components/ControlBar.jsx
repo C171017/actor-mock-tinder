@@ -13,8 +13,8 @@ const ControlBar = ({ likedCount, passedCount }) => {
   return (
     <div className="control-bar">
       <div className="control-bar-stats">
-        <span className="liked-count">{t('liked')} {likedCount}</span>
-        <span className="passed-count">{t('passed')} {passedCount}</span>
+        <span className="liked-count"><span className="emoji">{t('liked')}</span> {likedCount}</span>
+        <span className="passed-count"><span className="emoji">{t('passed')}</span> {passedCount}</span>
         <div className="language-switcher">
           <select 
             value={lang} 

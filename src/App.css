@@ -4,7 +4,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 60px;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
   position: relative;
 }
 
@@ -14,35 +16,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 18px 24px;
+  margin-bottom: 8px;
+  padding: 8px 12px;
   color: white;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px) saturate(180%);
-  border-radius: 20px;
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 10;
 }
 
 .app-header h1 {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 800;
   letter-spacing: -0.5px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+  margin: 0;
 }
 
-.app-header h1::before {
-  content: '🔥';
-  font-size: 32px;
-  filter: drop-shadow(0 0 10px rgba(255, 100, 0, 0.6));
-  animation: flameFlicker 2s ease-in-out infinite;
-}
 
 @keyframes flameFlicker {
   0%, 100% {
@@ -65,20 +62,20 @@
 
 .stats {
   display: flex;
-  gap: 12px;
-  font-size: 16px;
+  gap: 8px;
+  font-size: 14px;
   font-weight: 600;
   align-items: center;
 }
 
 .liked-count,
 .passed-count {
-  padding: 8px 16px;
+  padding: 4px 10px;
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 25px;
+  border-radius: 12px;
   backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1),
               inset 0 1px 0 rgba(255, 255, 255, 0.5);
   transition: all 0.3s ease;
   font-weight: 700;
@@ -96,9 +93,11 @@
   position: relative;
   width: 90%;
   max-width: 400px;
-  height: 600px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  height: calc(100vh - 180px);
+  max-height: 800px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,37 +107,39 @@
 .finished-message {
   text-align: center;
   color: white;
-  padding: 50px 40px;
+  padding: 24px 20px;
   background: rgba(255, 255, 255, 0.15);
-  border-radius: 30px;
+  border-radius: 12px;
   backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15),
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15),
               inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .finished-message h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 12px;
+  margin-top: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .finished-message p {
-  font-size: 20px;
-  margin-bottom: 30px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  margin-top: 0;
 }
 
 .reset-button {
-  padding: 16px 45px;
-  font-size: 18px;
+  padding: 10px 28px;
+  font-size: 16px;
   font-weight: 700;
   background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
   color: #FD5068;
   border: none;
-  border-radius: 35px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15),
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15),
               0 0 0 1px rgba(255, 255, 255, 0.5),
               inset 0 1px 0 rgba(255, 255, 255, 0.8);
   position: relative;
@@ -172,23 +173,23 @@
 
 .action-buttons {
   display: flex;
-  gap: 25px;
+  gap: 16px;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
+  padding: 8px 0;
 }
 
 .pass-button,
 .like-button {
-  width: 65px;
-  height: 65px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 24px;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
@@ -196,10 +197,10 @@
 .pass-button {
   background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
   color: #FD5068;
-  box-shadow: 0 4px 20px rgba(253, 80, 104, 0.3),
-              0 0 0 2px rgba(253, 80, 104, 0.15),
+  box-shadow: 0 2px 12px rgba(253, 80, 104, 0.3),
+              0 0 0 1px rgba(253, 80, 104, 0.15),
               inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(253, 80, 104, 0.25);
+  border: 1px solid rgba(253, 80, 104, 0.25);
   position: relative;
 }
 
@@ -224,10 +225,10 @@
 .like-button {
   background: linear-gradient(135deg, #FFCD3C 0%, #FF8E8E 50%, #FFB3B3 100%);
   color: white;
-  box-shadow: 0 4px 25px rgba(255, 205, 60, 0.4),
-              0 0 0 2px rgba(255, 255, 255, 0.2),
+  box-shadow: 0 2px 14px rgba(255, 205, 60, 0.4),
+              0 0 0 1px rgba(255, 255, 255, 0.2),
               inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
 }
 
@@ -289,60 +290,61 @@
 /* Responsive design */
 @media (max-width: 480px) {
   .app {
-    padding: 15px 10px;
+    padding: 8px 6px 6px 6px;
   }
 
   .app-header {
-    padding: 10px 15px;
-    margin-bottom: 15px;
+    padding: 6px 10px;
+    margin-bottom: 6px;
   }
 
   .app-header h1 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .app-header h1::before {
-    font-size: 26px;
+    font-size: 20px;
   }
 
   .stats {
-    font-size: 14px;
-    gap: 8px;
+    font-size: 12px;
+    gap: 6px;
   }
 
   .liked-count,
   .passed-count {
-    padding: 5px 10px;
-    font-size: 14px;
+    padding: 3px 8px;
+    font-size: 12px;
   }
 
   .card-container {
-    height: 580px;
+    height: calc(100vh - 160px);
+    max-height: 700px;
     width: 95%;
   }
 
   .action-buttons {
-    gap: 20px;
-    padding: 15px 0;
+    gap: 12px;
+    padding: 6px 0;
   }
 
   .pass-button,
   .like-button {
-    width: 60px;
-    height: 60px;
-    font-size: 26px;
+    width: 52px;
+    height: 52px;
+    font-size: 22px;
   }
 
   .finished-message {
-    padding: 30px 20px;
+    padding: 20px 16px;
   }
 
   .finished-message h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .finished-message p {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
