@@ -21,6 +21,8 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [likedActors, setLikedActors] = useState([]);
   const [passedActors, setPassedActors] = useState([]);
+  const [showHeartExplosion, setShowHeartExplosion] = useState(false);
+  const [echoEmojis, setEchoEmojis] = useState([]);
 
   const handleSwipe = (direction) => {
     if (currentIndex >= shuffledActors.length) return;
@@ -29,6 +31,38 @@ function App() {
     
     if (direction === 'right') {
       setLikedActors([...likedActors, currentActor]);
+      // Trigger heart explosion after swipe completes
+      setTimeout(() => {
+        setShowHeartExplosion(true);
+        // Hide after animation completes
+        setTimeout(() => {
+          setShowHeartExplosion(false);
+        }, 1000);
+        
+        // Trigger echo effect - create multiple waves of emojis
+        const waveCount = 6;
+        const emojisPerWave = 2;
+        const newEchoEmojis = [];
+        
+        for (let wave = 0; wave < waveCount; wave++) {
+          for (let i = 0; i < emojisPerWave; i++) {
+            newEchoEmojis.push({
+              id: Date.now() + wave * 1000 + i,
+              wave: wave,
+              index: i,
+              delay: wave * 0.12, // Stagger waves
+              direction: i === 0 ? 'right' : 'left', // Alternate directions
+            });
+          }
+        }
+        
+        setEchoEmojis(newEchoEmojis);
+        
+        // Clean up after animation completes
+        setTimeout(() => {
+          setEchoEmojis([]);
+        }, 2000);
+      }, 250);
     } else {
       setPassedActors([...passedActors, currentActor]);
     }
@@ -85,6 +119,23 @@ function App() {
         likedCount={likedActors.length}
         passedCount={passedActors.length}
       />
+
+      {showHeartExplosion && (
+        <div className="heart-explosion">{t('like')}</div>
+      )}
+
+      {echoEmojis.map((emoji) => (
+        <div
+          key={emoji.id}
+          className={`echo-emoji echo-${emoji.direction}`}
+          style={{
+            animationDelay: `${emoji.delay}s`,
+            top: `${25 + emoji.wave * 12}%`,
+          }}
+        >
+          {t('like')}
+        </div>
+      ))}
 
     </div>
   );

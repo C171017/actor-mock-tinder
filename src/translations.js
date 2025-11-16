@@ -1,8 +1,8 @@
 // Translation strings for all supported languages
 export const translations = {
   'zh-CN': {
-    liked: '❤️',
-    passed: '👎',
+    liked: '❤️‍🔥',
+    passed: '🙅🏼',
     
     // Finished message
     finished: '暂时就这些了！',
@@ -27,8 +27,8 @@ export const translations = {
     'henry.cavill': '英国演员，因在《超人》和《巫师》中饰演杰洛特而闻名。',
   },
   'zh-TW': {
-    liked: '❤️',
-    passed: '👎',
+    liked: '❤️‍🔥',
+    passed: '🙅🏼',
     
     // Finished message
     finished: '暫時就這些了！',
@@ -53,8 +53,8 @@ export const translations = {
     'henry.cavill': '英國演員，因在《超人》和《巫師》中飾演傑洛特而聞名。',
   },
   'en': {
-    liked: '❤️',
-    passed: '👎',
+    liked: '❤️‍🔥',
+    passed: '🙅🏼',
     
     // Finished message
     finished: "That's all for now!",
