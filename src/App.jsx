@@ -21,47 +21,45 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [likedActors, setLikedActors] = useState([]);
   const [passedActors, setPassedActors] = useState([]);
-  const [showHeartExplosion, setShowHeartExplosion] = useState(false);
-  const [echoEmojis, setEchoEmojis] = useState([]);
+  const [showBigHeart, setShowBigHeart] = useState(false);
+  const [fallingEmojis, setFallingEmojis] = useState([]);
 
   const handleSwipe = (direction) => {
     if (currentIndex >= shuffledActors.length) return;
 
     const currentActor = shuffledActors[currentIndex];
     
-    if (direction === 'right') {
+      if (direction === 'right') {
       setLikedActors([...likedActors, currentActor]);
-      // Trigger heart explosion after swipe completes
+      // Trigger big heart and falling emojis after swipe completes
       setTimeout(() => {
-        setShowHeartExplosion(true);
-        // Hide after animation completes
+        // Show big heart that blows up and fades
+        setShowBigHeart(true);
         setTimeout(() => {
-          setShowHeartExplosion(false);
-        }, 1000);
+          setShowBigHeart(false);
+        }, 1500);
         
-        // Trigger echo effect - create multiple waves of emojis
-        const waveCount = 6;
-        const emojisPerWave = 2;
-        const newEchoEmojis = [];
+        // Create falling emojis like rain
+        const emojiTypes = ['🥰', '💋', '🔥'];
+        const emojiCount = 30;
+        const newFallingEmojis = [];
         
-        for (let wave = 0; wave < waveCount; wave++) {
-          for (let i = 0; i < emojisPerWave; i++) {
-            newEchoEmojis.push({
-              id: Date.now() + wave * 1000 + i,
-              wave: wave,
-              index: i,
-              delay: wave * 0.12, // Stagger waves
-              direction: i === 0 ? 'right' : 'left', // Alternate directions
-            });
-          }
+        for (let i = 0; i < emojiCount; i++) {
+          newFallingEmojis.push({
+            id: Date.now() + i,
+            emoji: emojiTypes[Math.floor(Math.random() * emojiTypes.length)],
+            left: Math.random() * 100, // Random horizontal position
+            delay: Math.random() * 0.5, // Random delay for staggered effect
+            duration: 2 + Math.random() * 1, // Random fall duration (2-3 seconds)
+          });
         }
         
-        setEchoEmojis(newEchoEmojis);
+        setFallingEmojis(newFallingEmojis);
         
         // Clean up after animation completes
         setTimeout(() => {
-          setEchoEmojis([]);
-        }, 2000);
+          setFallingEmojis([]);
+        }, 4000);
       }, 250);
     } else {
       setPassedActors([...passedActors, currentActor]);
@@ -120,20 +118,21 @@ function App() {
         passedCount={passedActors.length}
       />
 
-      {showHeartExplosion && (
-        <div className="heart-explosion">{t('like')}</div>
+      {showBigHeart && (
+        <div className="big-heart">{t('like')}</div>
       )}
 
-      {echoEmojis.map((emoji) => (
+      {fallingEmojis.map((item) => (
         <div
-          key={emoji.id}
-          className={`echo-emoji echo-${emoji.direction}`}
+          key={item.id}
+          className="falling-emoji"
           style={{
-            animationDelay: `${emoji.delay}s`,
-            top: `${25 + emoji.wave * 12}%`,
+            left: `${item.left}%`,
+            animationDelay: `${item.delay}s`,
+            animationDuration: `${item.duration}s`,
           }}
         >
-          {t('like')}
+          {item.emoji}
         </div>
       ))}
 
